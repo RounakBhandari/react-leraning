@@ -1,10 +1,23 @@
-import { Button } from '@material-tailwind/react'
+import axios from 'axios'
 import React from 'react'
 
- const Homepage = () => {
+const Homepage = () => {
+  
+  axios.get('https://api.escuelajs.co/api/v1/products')
+  .then((val)=>{
+    console.log(val.data)
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+
+
+
+
   return (
-    <div><Button>Hello</Button></div>
+    <div>Homepage</div>
+    
   )
 }
 
-export default Homepage;
+export default Homepage
