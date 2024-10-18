@@ -1,7 +1,10 @@
+import { Button } from '@material-tailwind/react'
 import React from 'react'
 
-export const Homepage = () => {
+ const Homepage = () => {
   return (
-    <div>Homepage</div>
+    <div><Button>Hello</Button></div>
   )
 }
+
+export default Homepage;
