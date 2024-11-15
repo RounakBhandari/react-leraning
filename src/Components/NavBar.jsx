@@ -11,7 +11,7 @@ import { NavLink } from "react-router-dom";
 function NavList() {
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography
+      {/* <Typography
         as="li"
         variant="small"
         color="blue-gray"
@@ -21,36 +21,8 @@ function NavList() {
           Categories
         </NavLink>
       </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-medium"
-      >
-        <NavLink to="/latest" className="flex items-center hover:text-blue-500 transition-colors">
-          Latest
-        </NavLink>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-medium"
-      >
-        <NavLink to="#" className="flex items-center hover:text-blue-500 transition-colors">
-          Blocks
-        </NavLink>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-medium"
-      >
-        <NavLink to="#" className="flex items-center hover:text-blue-500 transition-colors">
-          Docs
-        </NavLink>
-      </Typography>
+    */}
+   
     </ul>
   );
 }
@@ -76,7 +48,7 @@ export function NavBar() {
           to="/"
           className="mr-4 cursor-pointer py-1.5 font-bold"
         >
-          Meal App
+          Rounak Bhandari
         </NavLink>
         <div className="hidden lg:block">
           <NavList />
