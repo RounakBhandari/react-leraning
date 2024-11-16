@@ -1,9 +1,13 @@
 import { CardCompo } from "../Components/CardCompo";
+import { Spinners } from "../Components/Spinner";
 import { useApiHooks } from "../hooks/apiHooks";
 const Categories = () => {
   
-   const data = useApiHooks('https://www.themealdb.com/api/json/v1/1/categories.php')
-      
+   const {data, load, err} = useApiHooks('https://www.themealdb.com/api/json/v1/1/categories.php')
+   if(load){
+    return <Spinners/>
+   } 
+   else{  
       return (
         <div className="grid grid-cols-3 gap-5 p-5">
     
@@ -14,5 +18,6 @@ const Categories = () => {
     
         </div>
       )
+    }
 }
 export default Categories

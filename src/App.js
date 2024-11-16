@@ -4,6 +4,7 @@ import Homepage from "./Pages/Homepage";
 import RootLayout from "./Pages/RootLayout";
 import Categories from "./Pages/Categories";
 import ListItems from "./Pages/ListItems";
+import MealDescription from "./Pages/MealDescription";
 const App = () => {
   const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const App = () => {
         {
           path: "categories/:category",
           element: <ListItems />,
+        },
+        {
+          path: "detail/:id",
+          element: <MealDescription />,
         },
       ],
     },
