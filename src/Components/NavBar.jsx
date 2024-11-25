@@ -6,11 +6,10 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { NavLink } from "react-router-dom";
- 
+import { NavLink, useNavigate } from "react-router-dom";
 function NavList() {
   return (
-    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="my-2  flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography
         as="li"
         variant="small"
@@ -27,9 +26,9 @@ function NavList() {
         color="blue-gray"
         className="p-1 font-medium"
       >
-        <NavLink to="/latest" className="flex items-center hover:text-blue-500 transition-colors">
-          Latest
-        </NavLink>
+        <a href="https://themealdb.com" target="_blank" className="flex items-center hover:text-blue-500 transition-colors">
+          API
+        </a>
       </Typography>
       <Typography
         as="li"
@@ -37,9 +36,9 @@ function NavList() {
         color="blue-gray"
         className="p-1 font-medium"
       >
-        <NavLink to="#" className="flex items-center hover:text-blue-500 transition-colors">
-          Blocks
-        </NavLink>
+        <a href="https://github.com/RounakBhandari/react-leraning/tree/meal-app" target="_blank" className="flex items-center hover:text-blue-500 transition-colors">
+          Github
+        </a>
       </Typography>
       <Typography
         as="li"
@@ -47,9 +46,16 @@ function NavList() {
         color="blue-gray"
         className="p-1 font-medium"
       >
-        <NavLink to="#" className="flex items-center hover:text-blue-500 transition-colors">
-          Docs
-        </NavLink>
+        <a href="http://nhirounakbhandari79598.great-site.net" target="_blank" className="flex items-center hover:text-blue-500 transition-colors">
+          Restaurant
+        </a>
+      </Typography>
+      <Typography
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-small select-none"
+      >
+        Rounak<sup>®</sup>
       </Typography>
     </ul>
   );
