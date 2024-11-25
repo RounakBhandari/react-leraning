@@ -8,7 +8,7 @@
 
         const nav = useNavigate();
         return (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-7">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-7 ">
             {data && data.meals.slice(0,16).map(({ strMealThumb, idMeal }) => (
             <div key={idMeal} className="hover:scale-105 transition-all ease-in-out duration-300">
                 <img
