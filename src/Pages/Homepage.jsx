@@ -16,7 +16,7 @@ const Homepage = () => {
         mail: '',
         gender: '',
         hobby: [],
-        country: '',
+        country: 'nepal',
         message:''
     },
       onSubmit: (val)=>{
