@@ -4,6 +4,7 @@ import {
   Collapse,
   // Typography,
   IconButton,
+  Typography,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
@@ -11,17 +12,17 @@ import { NavLink } from "react-router-dom";
 function NavList() {
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      {/* <Typography
+      <Typography
         as="li"
         variant="small"
         color="blue-gray"
         className="p-1 font-medium"
       >
-        <NavLink to="/categories" className="flex items-center hover:text-blue-500 transition-colors">
-          Categories
+        <NavLink to="/addform" className={(e)=>e.isActive?'text-red-800 cursor-pointer font-bold text-center':" cursor-pointer  font-bold text-center"}>
+          Add Form 
         </NavLink>
       </Typography>
-    */}
+   
    
     </ul>
   );
@@ -43,12 +44,12 @@ export function NavBar() {
  
   return (
     <Navbar className="mx-auto max-w-screen-xl px-6 py-3">
-      <div className="flex items-center justify-center text-blue-gray-900">
+      <div className="flex items-center  text-blue-gray-900">
         <NavLink
           to="/"
-          className="mr-4 cursor-pointer py-1.5 font-bold text-center"
+          className={"mr-4 cursor-pointer py-1.5 font-bold text-center"}
         >
-          Form Validation ( formik and Yup )
+          Redux
         </NavLink>
         <div className="hidden lg:block">
           <NavList />
