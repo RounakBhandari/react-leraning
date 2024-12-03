@@ -2,13 +2,15 @@ import { Button, Checkbox, Input, Option, Radio, Select, Textarea, Typography } 
 import { useFormik} from "formik";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
-
 import * as Yup from "yup";
 import { addUser } from "../redux/userSlice";
+import { nanoid } from "@reduxjs/toolkit";
 const AddForm = () => {
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch(); //useDispatch is used to dispatch the action (i.e, calling the action creator) 
     const nav = useNavigate();    
+  
+   //Yup is used to validate the form which is stored in formSchema 
   const formSchema = Yup.object({
     username: Yup.string().required('Username is Required').min(5,'Username must be more than 5 characters').max(20,'Username cannot exceed 20 characters')  ,
     mail: Yup.string().required('Mail Address is Required').matches(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,"Enter a valid mail"),
@@ -17,26 +19,30 @@ const AddForm = () => {
     country: Yup.string().required('This cannot be empty'),
     message: Yup.string().required('Required').min(5,'Must exceed 5 characters'),
   });
+
+  //useFormik is used to handle the form easily. 
   const {values, errors , handleChange, handleSubmit,touched, setFieldValue} = useFormik({
-    initialValues:{
+    initialValues:{ //initial values of the form
         username: '',
         mail: '',
         gender: '',
         hobby: [],
-        country: 'nepal',
+        country: '',
         message:''
     },
-      onSubmit: (val)=>{
-        dispatch(addUser(val));
-        setTimeout(() => {
-            nav('/',{state: val});
+      onSubmit: (val)=>{ //onSubmit is called when the form is submitted and val is the values of the form when submitted
+        val.id= nanoid(); //adding random id using nanoid function which generates unique id for each submission.
+        dispatch(addUser(val)); //dispatching the addUser action
+        setTimeout(() => { 
+            nav('/',{state: val}); //navigating to home page after 1.5 seconds for a smooth transition
             
         }, 1500);
     },
-      validationSchema: formSchema,
+      validationSchema: formSchema, //declaring the validation schema
   })
 return (
-    <div className=" p-4 flex justify-center ">
+    <div className=" p-4 flex flex-col items-center  justify-center ">
+      <h1 className="text-3xl font-bold underline mb-2">Add Form</h1>
       <form className=" space-y-1 p-5 rounded-lg border-solid border-2 border-gray-400 " onSubmit={handleSubmit} >
         <Input label="Username" name="username" onChange={handleChange}/> <p className="text-red-800 font-sans text-xs">{touched.username && errors.username}</p>  
         <Input label="Email" name="mail" onChange={handleChange} /> <p className="text-red-800 font-sans text-xs">{touched.mail && errors.mail}</p>

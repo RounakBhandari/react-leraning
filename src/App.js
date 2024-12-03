@@ -3,6 +3,7 @@ import "./index.css";
 import Homepage from "./Pages/Homepage";
 import RootLayout from "./Pages/RootLayout";
 import AddForm from "./Pages/AddPage";
+import UpdateForm from "./Pages/UpdateForm";
 const App = () => {
   const router = createBrowserRouter([
     {
@@ -14,8 +15,12 @@ const App = () => {
           element: <Homepage />,
         },
         {
-          path: "/addform",
+          path: "addform",
           element: <AddForm />,
+        },
+        {
+          path: "updateform/:id",
+          element: <UpdateForm />,
         },
       ],
     },
