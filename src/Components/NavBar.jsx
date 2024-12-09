@@ -55,7 +55,7 @@ function NavList() {
         color="blue-gray"
         className="p-1 font-small select-none"
       >
-        Rounak<sup>®</sup>
+       <a href="http://www.bhandarirounak.com.np" target="_blank" >© Rounak<sup>®</sup></a>
       </Typography>
     </ul>
   );
