@@ -1,6 +1,8 @@
+import { useCocktailCategoryQuery } from "./features/cocktail/cocktail";
+
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
-export default App
+  const m = useCocktailCategoryQuery();
+  console.log(m);
+  return <div>App</div>;
+};
+export default App;
