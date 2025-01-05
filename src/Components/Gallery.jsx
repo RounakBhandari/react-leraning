@@ -1,10 +1,11 @@
     import { useNavigate } from "react-router";
     import { useApiHooks } from "../hooks/apiHooks";
+import rA from "../data/randomArea";
 
     export function Pictures() {
 
       
-        const {data} = useApiHooks('https://www.themealdb.com/api/json/v1/1/filter.php',{a: 'Indian'});
+        const {data} = useApiHooks('https://www.themealdb.com/api/json/v1/1/filter.php',{a: rA.strArea});
 
         const nav = useNavigate();
         return (
