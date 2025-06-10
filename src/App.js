@@ -1,7 +1,10 @@
+import Testing from "./Testing";
 const App = () => {
-	return <div>
-    
-  </div>;
+	return (
+		<div>
+			<Testing name="Rounak" />
+		</div>
+	);
 };
 
 export default App;
