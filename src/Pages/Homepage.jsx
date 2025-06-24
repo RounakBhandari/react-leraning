@@ -2,25 +2,22 @@ import React from 'react'
 import { NavbarFinal } from '../Components/Navbar';
 import { ProfileCard } from '../Components/ProfileCard';
 
- const Homepage = () => {
-  return (
-    <div className='bg-neutral-light'>
-      <div className='p-5'>
-      <NavbarFinal/>
-       </div>
-
-       {/* Main Section */}
-
-       <div className='flex flex-cols-2 p-3 items-center justify-evenly'>
-        <div>
-        <ProfileCard/>
+  const Homepage = () => {
+    return (
+      <div className='bg-neutral-light min-h-screen'>
+        <div className='p-5'>
+        <NavbarFinal/>
         </div>
-        <div>
-          Under Construction
+
+        {/* Main Section */}
+
+        
+          <div className='font-sans font-extrabold text-9xl scale-y-150 flex flex-row justify-center '>
+            ROUNAK BHANDARI
+          </div>
+        
         </div>
-       </div>
-    </div>
-  )
-}
+    )
+  }
 
 export default Homepage;

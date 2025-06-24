@@ -17,7 +17,7 @@ import { NavLink } from "react-router-dom";
 
 function NavList() {
   return (
-    <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1 select-none">
+    <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1  select-none">
       <NavLink to={'/'}>
         <Typography
           variant="small"
@@ -36,13 +36,13 @@ function NavList() {
           <ListItem className="flex items-center gap-2 py-2 pr-4">About</ListItem>
         </Typography>
       </NavLink>
-      <NavLink to={'/contact'}>
+      <NavLink to={'/skills'}>
         <Typography
           variant="small"
           color="blue-gray"
           className="font-medium"
         >
-          <ListItem className="flex items-center gap-2 py-2 pr-4">Contact</ListItem>
+          <ListItem className="flex items-center gap-2 py-2 pr-4">Skills</ListItem>
         </Typography>
       </NavLink>
       <NavLink to={'/gallery'}>
@@ -54,6 +54,7 @@ function NavList() {
           <ListItem className="flex items-center gap-2 py-2 pr-4">Gallery</ListItem>
         </Typography>
       </NavLink>
+      
     </List>
   );
 }
@@ -69,8 +70,8 @@ export function NavbarFinal() {
   }, []);
  
   return (
-    <Navbar className="mx-auto max-w-screen-xl px-4 py-2">
-      <div className="flex items-center justify-between text-blue-gray-900">
+    <Navbar className="mx-auto max-w-screen-2xl px-4 py-2">
+      <div className="flex items-center mx-3 justify-between text-blue-gray-900">
         <Typography
           as="a"
           href="#"
@@ -83,12 +84,24 @@ export function NavbarFinal() {
           <NavList />
         </div>
         <div className="hidden gap-2 lg:flex">
-          <Button variant="text" size="sm" color="blue-gray">
-            Log In
-          </Button>
-          <Button variant="gradient" size="sm">
-            Sign In
-          </Button>
+        <NavLink to={'/projects'}>
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="font-medium"
+        >
+          <ListItem className="flex items-center gap-2 py-2 pr-4">Projects</ListItem>
+        </Typography>
+        </NavLink>
+      <NavLink to={'/contact'}>
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="font-medium"
+        >
+          <ListItem className="flex items-center gap-2 py-2 pr-4">Contact</ListItem>
+        </Typography>
+      </NavLink>
         </div>
         <IconButton
           variant="text"
